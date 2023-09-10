@@ -8,11 +8,15 @@ public class MenuScript : MonoBehaviour
 {
     public string sceneName;
     public TMP_Text textField;
+    public string initialText;
     public string favoriteGame = "Final Fantasy X";
 
-    void Start()
+    void Awake()
     {
         textField = GetComponent<TMP_Text>();
+        initialText = textField.ToString();
+        initialText = "Press 'F' Key";
+        textField.text = initialText;
     }
 
     void Update()
@@ -27,10 +31,13 @@ public class MenuScript : MonoBehaviour
 
     public void UpdateTextField()
     {
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             textField.text = favoriteGame;
+            Debug.Log("Text Field Updated!");
         }
+
 
     }
 
