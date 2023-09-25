@@ -6,7 +6,7 @@ using TMPro;
 public class MidtermExercise : MonoBehaviour
 {
 
-    public string hobbyName;
+    public string hobbyName = "Gaming";
 
     public TextMeshProUGUI hobbyDisplay;
 
@@ -20,17 +20,18 @@ public class MidtermExercise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // run when H key is pressed
         if (Input.GetKeyDown(KeyCode.H))
         {
-            ProcessText("Gaming");
+            ProcessText(hobbyName);
         }
     }
 
-    public void ProcessText(string hobbyName)
+    public void ProcessText(string text)
     {
-        Debug.Log("Process Text Method triggered!");
+        //Debug.Log("Process Text Method triggered!");
 
-        hobbyDisplay.text = $"My favorite hobby is {hobbyName}";
+        hobbyDisplay.text = $"My favorite hobby is {text}";
 
     }
 }
